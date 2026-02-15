@@ -45,6 +45,10 @@ Luhn.checksum("378282246310005")
 
 Full documentation is available on [HexDocs](https://hexdocs.pm/luhn).
 
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 ## License
 
-MIT — see [LICENSE.txt](LICENSE.txt) for details.
+MIT — see [LICENSE](LICENSE) for details.
