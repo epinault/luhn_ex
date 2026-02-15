@@ -46,15 +46,15 @@ defmodule LuhnTest do
 
   describe "valid?/1 with integer input" do
     test "accepts integers" do
-      assert Luhn.valid?(4111111111111111)
-      assert Luhn.valid?(378282246310005)
+      assert Luhn.valid?(4111_1111_1111_1111)
+      assert Luhn.valid?(3782_8224_6310_005)
     end
   end
 
   describe "valid?/1 with invalid numbers" do
     test "rejects invalid card numbers" do
       refute Luhn.valid?("123456789123456")
-      refute Luhn.valid?(123456789123456)
+      refute Luhn.valid?(1234_5678_9123_456)
       refute Luhn.valid?("4111111511111112")
     end
 
@@ -104,7 +104,7 @@ defmodule LuhnTest do
     end
 
     test "works with integer input" do
-      assert Luhn.checksum(4111111111111111) == 0
+      assert Luhn.checksum(4111_1111_1111_1111) == 0
     end
 
     test "works with hex base" do
