@@ -24,7 +24,7 @@
           {Credo.Check.Design.TagFIXME, []},
           {Credo.Check.Readability.AliasOrder, []},
           {Credo.Check.Readability.FunctionNames, []},
-          {Credo.Check.Readability.LargeNumbers, []},
+          {Credo.Check.Readability.LargeNumbers, [excluded_files: ~w(test/)]},
           {Credo.Check.Readability.MaxLineLength, [priority: :low, max_length: 120]},
           {Credo.Check.Readability.ModuleAttributeNames, []},
           {Credo.Check.Readability.ModuleDoc, []},
