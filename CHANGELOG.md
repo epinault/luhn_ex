@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-08
+
 ### Changed
 
 - Modernized `mix.exs` configuration (renamed module to `Luhn.MixProject`, updated deps)
 - Made `double/3` private — it was an internal implementation detail exposed publicly
 - Improved `@doc` and `@spec` annotations across all public functions
-- Updated CI to test against Elixir 1.15–1.18 and OTP 25–27
+- Updated CI to test against Elixir 1.15–1.19 and OTP 26–28
 - Minimum Elixir version bumped to 1.13
+- Replaced ExCoveralls with Mix's built-in coverage; enforces 80% minimum threshold
+- Fixed incorrect doctest expected values for `checksum/2` and `valid?/2`
 
 ### Added
 
@@ -28,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `power_assert` dependency (unmaintained, unused)
 - `benchfella` dependency (replaced by standard benchmarking)
+- `excoveralls` dependency (replaced by built-in Mix coverage)
 
 ## [0.3.3] - 2019-08-18
 
