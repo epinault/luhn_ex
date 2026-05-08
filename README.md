@@ -1,53 +1,54 @@
-# Luhn algorithm in Elixir
+# Luhn
 
 [![hex.pm version](https://img.shields.io/hexpm/v/luhn.svg)](https://hex.pm/packages/luhn)
-[![hex.pm daily downloads](https://img.shields.io/hexpm/dd/luhn.svg)](https://hex.pm/packages/luhn)
-[![hex.pm weekly downloads](https://img.shields.io/hexpm/dw/luhn.svg)](https://hex.pm/packages/luhn) 
 [![hex.pm downloads](https://img.shields.io/hexpm/dt/luhn.svg)](https://hex.pm/packages/luhn)
-[![Build Status](https://github.com/ma2gedev/luhn_ex/workflows/Elixir%20CI/badge.svg?branch=master)](https://github.com/ma2gedev/luhn_ex/actions?query=workflow%3A%22Elixir+CI%22)
+[![CI](https://github.com/epinault/luhn_ex/workflows/CI/badge.svg?branch=master)](https://github.com/epinault/luhn_ex/actions?query=workflow%3ACI)
 
-Validate Luhn number.
+Luhn algorithm implementation in Elixir for validating credit card numbers,
+IMEI numbers, and other identification numbers that use the Luhn checksum.
+
+Supports arbitrary bases (decimal, hexadecimal, etc.).
 
 ## Installation
 
+Add `luhn` to your list of dependencies in `mix.exs`:
+
 ```elixir
-# mix.exs
-defp deps do
+def deps do
   [
-    {:luhn, "~> 0.3.0"}
+    {:luhn, "~> 0.3"}
   ]
 end
 ```
 
-and fetch
-```bash
-$ mix deps.get
-```
-
-## How to use
+## Usage
 
 ```elixir
-# validate number
-Luhn.valid? "378282246310005"
+# Validate a credit card number (string)
+Luhn.valid?("378282246310005")
 # => true
 
-# Integer type number
-Luhn.valid? 378282246310005
+# Also works with integers
+Luhn.valid?(4111111111111111)
 # => true
+
+# Hexadecimal support
+Luhn.valid?("abc1239", 16)
+# => true
+
+# Get the checksum value
+Luhn.checksum("378282246310005")
+# => 0
 ```
 
-## Benchmarking
+## Documentation
 
-```bash
-$ MIX_ENV=bench mix deps.get
-$ MIX_ENV=bench mix compile
-$ mix bench
-```
+Full documentation is available on [HexDocs](https://hexdocs.pm/luhn).
 
-## Author
+## Contributing
 
-Takayuki Matsubara (@ma2ge on twitter)
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## LICENSE
+## License
 
-MIT
+MIT — see [LICENSE](LICENSE) for details.

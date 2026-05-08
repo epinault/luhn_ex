@@ -1,5 +1,8 @@
 /_build
 /deps
+/doc
 erl_crash.dump
 *.ez
 /bench/snapshots
+*.beam
+.elixir_ls/
