@@ -38,7 +38,7 @@ defmodule Luhn do
       iex> Luhn.valid?(378282246310005)
       true
 
-      iex> Luhn.valid?(0x1580BB2EA8875, 16)
+      iex> Luhn.valid?(0xABC1239, 16)
       true
 
       iex> Luhn.valid?("123456789123456")
@@ -60,7 +60,7 @@ defmodule Luhn do
       0
 
       iex> Luhn.checksum("123456789123456")
-      4
+      8
   """
   @spec checksum(integer() | String.t(), pos_integer()) :: non_neg_integer()
   def checksum(number, base \\ 10)
